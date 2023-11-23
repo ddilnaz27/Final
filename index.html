@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkey</title>
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        .card {
+          width: 18rem;
+        }
+      </style>
+
+<!--mouseover event listener-->
+<script>
+    function mOver(obj) {
+        obj.innerHTML = "TURKEY"
+    }
+    function mOut(obj) {
+        obj.innerHTML = "COUNTRY"
+    }
+</script>
+
+<!--onclick event listener-->
+<script>
+    function myFunction() {
+      alert("Enjoy the Turkish music!");
+    }
+</script>
+    
+<!--JS animation-->
+<script>
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+function handleFloatingAnimation() {
+    const servicesSection = document.getElementById('servicesSection');
+    const serviceCards = document.querySelectorAll('.services_card');
+
+    function animateCards() {
+        serviceCards.forEach((card, index) => {
+            card.style.animation = `floatUpDown 3s ease-in-out ${index * 0.5}s infinite`;
+        });
+    }
+
+    function checkVisibilityAndAnimate() {
+        if (isInViewport(servicesSection)) {
+            animateCards();
+            window.removeEventListener('scroll', checkVisibilityAndAnimate);
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibilityAndAnimate);
+}
+
+window.addEventListener('load', handleFloatingAnimation);
+
+</script>
+</head>
+
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
+            <div class="logo">
+                <a href="#" class="brand">Turkey</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facts.html">Facts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sights.html">Sights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">Quiz</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-icon">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-heart" style="margin-left: 800px;"></i> 
+                        </a>
+                    </li>
+                    <li class="nav-icon">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i> 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+</header>
+        
+<section class="home">
+    <video class="video-slide" src="video/2.mp4" autoplay muted loop></video>
+        <div class="main" id="home">
+                    <div class="main_tag">
+                        <!-- Mouseover EVENT -->
+                        <h1>I WANT TO VISIT<br><span onmouseover="mOver(this)" onmouseout="mOut(this)">COUNTRY</span></h1>
+                        <p>The country I want to visit, which is full of<br> great history, architecture and culture.</p>
+                        <a href="#" class="btn btn-light" onclick="playAudio();myFunction()">Music</a>
+                    </div>
+        </div>
+        
+</section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<!--JS Sound-->
+    <audio id="myAudio">
+        <source src="kara_sevda.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+      
+      <script>
+      var x = document.getElementById("myAudio"); 
+      
+      function playAudio() { 
+        x.play(); 
+      } 
+      
+      function pauseAudio() { 
+        x.pause(); 
+      } 
+      </script>
+
+    <!--Services-->
+
+    <div class="container">
+        <h1>Reasons</h1>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="services_card">
+              <i class="fa-solid fa-leaf"></i>
+              <h3>Beautiful Nature</h3>
+            </div>
+          </div>
+      
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-solid fa-book-bookmark"></i>
+              <h3>Great History</h3>
+            </div>
+          </div>
+      
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-solid fa-mosque"></i>
+              <h3>Wonderful Architecture</h3>
+            </div>
+          </div>
+      
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-solid fa-star-and-crescent"></i>
+              <h3>Turkish Culture</h3>
+            </div>
+          </div>
+      
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-regular fa-money-bill-1"></i>
+              <h3>Acceptable Price</h3>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-solid fa-face-smile-beam"></i>
+              <h3>Turkish Hospitality</h3>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-solid fa-utensils"></i>
+              <h3>Delicious Cuisine</h3>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="services_card">
+                <i class="fa-brands fa-cc-visa"></i>
+              <h3>Visa-free Regime</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+<!--
+    <div class="container">
+        <div class="services">
+      
+          <div class="services_box">
+      
+              <div class="services_card">
+                  <i class="fas fa-truck-fast"></i>
+                  <h3>Beautiful Nature</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-headset"></i>
+                  <h3>Great History</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-tag"></i>
+                  <h3>Wonderful Architecture</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-lock"></i>
+                  <h3>Turkic-speaking Culture</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-lock"></i>
+                  <h3>Acceptable Prices</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-lock"></i>
+                  <h3>Turkish Hospitality</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-lock"></i>
+                  <h3>Delicious Cuisine</h3>
+              </div>
+      
+              <div class="services_card">
+                  <i class="fas fa-lock"></i>
+                  <h3>Visa-free Regime</h3>
+              </div>
+      
+          </div>
+        </div>
+      </div>-->
+
+    <!--Footer-->
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="index.html">Main</a></li>
+                            <li><a href="facts.html">Facts</a></li>
+                            <li><a href="sights.html">Sights</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="quiz.html">Quiz</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">MT-2203</a></li>
+                            <li><a href="#">AITU student</a></li>
+                            <li><a href="#">Karaganda</a></li>
+                            <p class="copyright">Dilnaz © 2023</p>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li><a href="#">UI designer</a></li>
+                            <li><a href="#">Drawing</a></li>
+                            <li><a href="#">Photography</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/_ddilnaaz_?igshid=NzZlODBkYWE4Ng=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://wa.me/message/Z4CWSPWP4LE3P1"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
